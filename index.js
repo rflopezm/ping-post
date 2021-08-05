@@ -3,7 +3,10 @@ const app = express();
 const chokidar = require("chokidar");
 const port = 3000;
 
-const watcher = chokidar.watch("/Users/lopez/plates", { persistent: true });
+const watcher = chokidar.watch("/Users/lopez/plates", {
+  persistent: true,
+  ignored: "*.jpg",
+});
 
 const INFO_SEPARATOR = "_";
 const INFO_PLATE_CAMERA_ADDRESS_INDEX = 0;
